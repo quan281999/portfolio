@@ -19,6 +19,22 @@
         display: flex;
         justify-content: space-around;
 
+        @media only screen and (max-width: $bp-large) {
+            width: 50%;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 60%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            width: 70%;
+        }
+
+        @media only screen and (max-width: $bp-tiny) {
+            width: 90%;
+        }
+
         &__icon {
             width: 3rem;
             transition: $hover-transition;

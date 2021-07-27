@@ -26,7 +26,7 @@ const sliders = document.querySelectorAll(".slide-up");
 const closeNavigation = () => {
     navigation.classList.remove("navigation--opened");
     navigation.classList.add("navigation--closed");
-    navigationBtn.src = "/img/navigation/open.svg";
+    navigationBtn.src = "./img/navigation/open.svg";
     navigationOpen = false;
 }
 
@@ -34,7 +34,7 @@ const closeNavigation = () => {
 const openNavigation = () => {
     navigation.classList.remove("navigation--closed");
     navigation.classList.add("navigation--opened");
-    navigationBtn.src = "/img/navigation/close.svg";
+    navigationBtn.src = "./img/navigation/close.svg";
     navigationOpen = true;
 }
 
@@ -100,7 +100,7 @@ katalonTab.addEventListener("click", () => {
 // Sections Appear on Scrolling
 const appearOptions = {
     threshold: 0,
-    rootMargin: "0px 0px -200px 0px"
+    rootMargin: "0px 0px -190px 0px"
 };
 
 const appearOnScroll = new IntersectionObserver(function(
