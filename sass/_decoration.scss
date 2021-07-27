@@ -1,0 +1,95 @@
+.decoration {
+    position: fixed;
+    bottom: 0;
+    width: 2rem;
+    opacity: 1;
+    animation: appear 3s ease-in;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
+
+    &__left {
+        left: 3%;
+
+        &__list {
+            list-style: none;
+    
+            &::after {
+                @include vertical-line();
+            }
+        }
+    
+        &__icon {
+            margin: 1rem 0;
+            transition: $hover-transition;
+            fill: $color-dark-grey;
+    
+            &--mail:hover {
+                fill: $color-mail;
+                transform: scale(1.2);
+            }
+    
+            &--linkedin:hover {
+                fill: $color-linkedin;
+                transform: scale(1.2);
+            }
+    
+            &--github:hover {
+                fill: $color-github;
+                transform: scale(1.2);
+            }
+    
+            &--facebook:hover {
+                fill: $color-facebook;
+                transform: scale(1.2);
+            }
+    
+            &--instagram:hover {
+                fill: $color-instagram;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__right {
+        right: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__content {
+            @media only screen and (max-width: $bp-medium) {
+                display: none;
+            }
+            
+            &::after {
+                @include vertical-line();
+            }
+        }
+    
+        &__name {
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            margin-bottom: 1rem;
+            letter-spacing: .09rem;
+            transition: $hover-transition;
+    
+            &:hover {
+                color: black;
+                font-weight: 700;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

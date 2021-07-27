@@ -1,0 +1,81 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    &__swipe {
+        position: relative;
+        width: fit-content;
+        
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 100%;
+            width: 0%;
+            height: 100%;
+            background-color: black;
+            animation: swipe 1.5s ease-out 1s forwards;
+        }
+
+        &--delay {
+            &::after {
+                animation-delay: 1.5s;
+            }
+        }
+    }
+
+    &--name {
+        display: block;
+        font-size: 7rem;
+        font-weight: 700;
+        letter-spacing: .4rem;
+        text-transform: uppercase;
+        padding: 15px 25px;
+        opacity: 0;
+        animation: fade 0.01s ease-out 1.75s forwards;
+        webkit-text-stroke: .1rem black;
+        text-shadow: .4rem .4rem 0 white,
+                    -.3rem 0 0 white, 
+                    .8rem .5rem 0 black;
+    }
+
+    &--title {
+        display: block;
+        font-size: 4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        opacity: 0;
+        animation: fade 0.01s ease-out 2.25s forwards;
+    }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes swipe {
+    0% {
+        right: 100%;
+        left: 0;
+        width: 0%;
+    }
+    50% {
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        right: 0;
+        left: 100%;
+        width: 0%;
+    }
+}

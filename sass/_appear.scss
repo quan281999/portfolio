@@ -1,0 +1,19 @@
+.slide-up {
+    opacity: 0;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transform: translateY(2rem);
+}
+
+.slide-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    opacity: 0;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}

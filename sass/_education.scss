@@ -1,0 +1,60 @@
+.education {
+    @include section;
+
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    &__item {
+        padding: 4rem;
+        flex: 1 1;
+        border-radius: .3rem;
+        transition: all .5s;
+
+        &:hover {
+            box-shadow: 0 1.2rem 1.5rem 0 rgba(black, 0.24), 0 1.7rem 5rem 0 rgba(black, 0.19);
+            transform: translateY(-2rem);
+        }
+
+        &:hover &--name::after {
+            width: 100%;
+        }
+
+        &--logo {
+            width: 15rem;
+            height: 15rem;
+            margin-bottom: 1rem;
+        }
+
+        &--name {
+            font-size: 2.5rem;
+
+            &::after {
+                content: '';
+                position: relative;
+                left: 50%;
+                top: 3.5rem;
+                transform: translateX(-50%);
+                display: block;
+                width: 15rem;
+                height: .1rem;
+                background: black;
+                transition: width .4s;
+            }
+        }
+
+        &--period {
+            font-size: 1.5rem;
+        }
+
+        &--body {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+    }
+}

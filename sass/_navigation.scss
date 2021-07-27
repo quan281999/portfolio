@@ -1,0 +1,96 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    z-index: 10;
+    transition: all 0.6s ease-in-out;
+
+    &--opened {
+        right: 0;
+    }
+
+    &--closed {
+        right: -100%;
+    }
+
+
+    &__list {
+        list-style: none;
+        font-size: 5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__item {
+        margin: 1.5rem 0;
+
+        & div {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+            font-size: 3rem;
+            display: inline-block;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover, &:visited {
+                background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+                background-size: 300%;
+                transition: all .4s;
+                border-radius: .3rem;
+    
+                span {
+                    margin-right: 1.5rem;
+                    display: inline-block;
+                }
+            }
+    
+            &:hover, &:active {
+                background-position: 100%;
+                color: black;
+                transform: translateY(-1rem);
+            }
+        }
+    }
+
+}
+
+.navigation__btn {
+    opacity: 1;
+    animation: appear 4s ease-in;
+    position: fixed;
+    z-index: 11;
+    right: 2rem;
+    top: 2rem;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+}
+
+#menu-checkbox {
+    display: none;
+
+    &:checked ~ .navigation{
+        right:0;
+    }
+
+    &:checked + .menu-btn span {
+        transform: scaleX(0);
+    }
+    &:checked + .menu-btn:before {
+        transform: rotate(45deg);
+        border-color: #fff;
+    }
+    &:checked + .menu-btn:after {
+        transform: rotate(-45deg);
+        border-color: #fff;
+    }
+}

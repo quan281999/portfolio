@@ -1,0 +1,125 @@
+.experience {
+    @include section;
+
+    &__container {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        flex-direction: column;
+        margin-right: 9rem;
+        height: 100%;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: row;
+            margin-right: 0;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        &--tab {
+            width: 20rem;
+            font-size: 2.5rem;
+            color: $color-light-grey-1;
+            padding: 2.5rem 1rem;
+            border: none;
+            border-left: solid .3rem $color-light-grey-1;
+            background-color: white;
+            cursor: pointer;
+            transition: $hover-transition;
+            border-top-right-radius: .3rem;
+            border-end-end-radius: .3rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                border-top: solid .3rem $color-light-grey-1;
+                border-left: none;
+            }
+
+            &:first-of-type:hover {
+                background-color: $color-light-grey-2;
+                color: black;
+            }
+
+            &:not(:first-of-type) {
+                cursor: default;
+            }
+        }
+    }
+
+    &__descriptions {
+        width: 100%;
+
+        &--description {
+            opacity: 0;
+            height: 0;
+            transition: opacity 0.5s ease-in;
+            overflow: hidden;
+            max-width: 100%;
+
+            &--title {
+                height: 7rem;
+                position: relative;
+                font-size: 2.5rem;
+                font-weight: 700;
+
+                                
+                @media only screen and (max-width: $bp-tiny) {
+                    font-size: 2rem;
+                }
+
+                & a {
+                    @include anchor-tag;
+                    margin-left: .8rem;
+                }
+
+                &--logo {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &--period {
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+
+            ul {
+                width: 98%;
+                text-align: justify;
+                font-size: 2rem;
+                list-style-position: outside;
+                transform: translateX(1.7rem);
+
+                & li:not(:last-of-type) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.tab-active {
+    border-left: solid .3rem black;
+    color: black;
+
+    @media only screen and (max-width: $bp-medium) {
+        border-left: none;
+        border-top: solid .3rem black;
+        color: black;
+    }
+}
+
+.active {
+    opacity: 1;
+    height: auto;
+}

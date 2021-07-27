@@ -1,0 +1,97 @@
+.skills {
+    @include section;
+
+    &__tech {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(20rem, 1fr));
+        row-gap: 3rem;
+        column-gap: 3rem;
+        justify-content: center;
+        margin-bottom: 10rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: repeat(2, minmax(20rem, 1fr));
+        }
+
+        &__skill {
+            text-align: center;
+            transition: all .5s;
+            padding: 3rem 1rem;
+            border-radius: .3rem;
+    
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: rgba(50, 50, 93, 0.25) 0 1.3rem 2.7rem -.5rem, rgba(black, 0.3) 0 .8rem 1.6rem -.8rem;        
+            }
+    
+            &--logo {
+                width: 7rem;
+                height: 7rem;
+                margin-bottom: 2rem;
+            }
+    
+            &--name {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+
+    &__soft {
+        columns: 2;
+        font-size: 2.5rem;
+        text-align: center;
+        list-style: none;
+        line-height: 6rem;
+        margin-bottom: 10rem;
+    }
+
+    &__languages {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        font-size: 2.5rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+        }
+
+        &__bar {
+            margin-top: 1.5rem;
+            position: relative;
+            background-color: white;
+            border-radius: 1rem;
+            border: solid .1rem black;
+            width: 40rem;
+            height: 1.1rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                width: 100%;
+            }
+        }
+
+        &__progress {
+            position: absolute;
+            top: -.1rem;
+            left: -.1rem;
+            background-color: black;
+            border-radius: 1rem;
+            height: 1.1rem;
+
+            &--vn {
+                width: 97%;
+            }
+
+            &--eng {
+                width: 93%;
+            }
+        }
+
+        &__text {
+            text-align: end;
+            font-size: 1.5rem;
+            margin-top: .5rem;
+        }
+    }
+}
