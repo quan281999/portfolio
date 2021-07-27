@@ -212,6 +212,9 @@ h3 {
     justify-content: space-around;
     text-align: center;
     margin: 0 auto; }
+    @media only screen and (max-width: 50em) {
+      .education__container {
+        flex-direction: column; } }
   .education__item {
     padding: 4rem;
     flex: 1 1;
