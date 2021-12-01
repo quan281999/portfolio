@@ -27,9 +27,10 @@
 
         &--tab {
             width: 20rem;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
+            font-weight: 700;
             color: $color-light-grey-1;
-            padding: 2.5rem 1rem;
+            padding: 2rem 0rem;
             border: none;
             border-left: solid .3rem $color-light-grey-1;
             background-color: white;
@@ -66,7 +67,7 @@
             &--title {
                 height: 7rem;
                 position: relative;
-                font-size: 2.5rem;
+                font-size: 2.3rem;
                 font-weight: 700;
 
                                 

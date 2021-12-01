@@ -15,7 +15,7 @@
     }
 
     &__item {
-        padding: 4rem;
+        padding: 3rem;
         flex: 1 1;
         border-radius: .3rem;
         transition: all .5s;
@@ -36,7 +36,7 @@
         }
 
         &--name {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
 
             &::after {
                 content: '';
