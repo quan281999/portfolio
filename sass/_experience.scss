@@ -26,11 +26,11 @@
         }
 
         &--tab {
-            width: 20rem;
+            width: 24rem;
             font-size: 2.3rem;
             font-weight: 700;
             color: $color-light-grey-1;
-            padding: 2rem 0rem;
+            padding: 2rem;
             border: none;
             border-left: solid .3rem $color-light-grey-1;
             background-color: white;
@@ -44,13 +44,9 @@
                 border-left: none;
             }
 
-            &:first-of-type:hover {
+            &:hover {
                 background-color: $color-light-grey-2;
                 color: black;
-            }
-
-            &:not(:first-of-type) {
-                cursor: default;
             }
         }
     }
@@ -58,10 +54,17 @@
     &__descriptions {
         width: 100%;
 
+        &--description.active {
+            transition: opacity 0.5s ease-in;
+        }
+        
+        &--description:not(.active) {
+            transition: 0s;
+        }
+
         &--description {
             opacity: 0;
             height: 0;
-            transition: opacity 0.5s ease-in;
             max-width: 100%;
 
             &--title {

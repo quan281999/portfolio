@@ -101,7 +101,9 @@ h3 {
     opacity: 0;
     animation: fade 0.01s ease-out 1.75s forwards;
     webkit-text-stroke: .1rem black;
-    text-shadow: .4rem .4rem 0 white, -.3rem 0 0 white,  .8rem .5rem 0 black; }
+    text-shadow: .4rem .4rem 0 white,
+ -.3rem 0 0 white, 
+ .8rem .5rem 0 black; }
   .header--title {
     display: block;
     font-size: 4rem;
@@ -371,7 +373,7 @@ h3 {
   .experience__tabs {
     display: flex;
     flex-direction: column;
-    margin-right: 9rem;
+    margin-right: 5rem;
     height: 100%; }
     @media only screen and (max-width: 50em) {
       .experience__tabs {
@@ -380,11 +382,11 @@ h3 {
         margin-bottom: 1rem;
         width: 100%; } }
     .experience__tabs--tab {
-      width: 20rem;
+      width: 24rem;
       font-size: 2.3rem;
       font-weight: 700;
       color: #cdcdcd;
-      padding: 2rem 0rem;
+      padding: 2rem;
       border: none;
       border-left: solid 0.3rem #cdcdcd;
       background-color: white;
@@ -396,17 +398,18 @@ h3 {
         .experience__tabs--tab {
           border-top: solid 0.3rem #cdcdcd;
           border-left: none; } }
-      .experience__tabs--tab:first-of-type:hover {
+      .experience__tabs--tab:hover {
         background-color: #f5f5f5;
         color: black; }
-      .experience__tabs--tab:not(:first-of-type) {
-        cursor: default; }
   .experience__descriptions {
     width: 100%; }
+    .experience__descriptions--description.active {
+      transition: opacity 0.5s ease-in; }
+    .experience__descriptions--description:not(.active) {
+      transition: 0s; }
     .experience__descriptions--description {
       opacity: 0;
       height: 0;
-      transition: opacity 0.5s ease-in;
       max-width: 100%; }
       .experience__descriptions--description--title {
         height: 7rem;

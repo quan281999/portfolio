@@ -1,22 +1,33 @@
 // Navigation Btn
-const navigation = document.getElementById("navigation")
-const navigationBtn = document.getElementById("navigation__btn")
+const navigation = document.getElementById("navigation");
+const navigationBtn = document.getElementById("navigation__btn");
 
 // Section Btns
-const aboutBtn = document.getElementById("about--btn")
-const educationBtn = document.getElementById("education--btn")
-const experienceBtn = document.getElementById("experience--btn")
-const skillsBtn = document.getElementById("skills--btn")
-const projectsBtn = document.getElementById("projects--btn")
-const contactBtn = document.getElementById("contact--btn")
+const aboutBtn = document.getElementById("about--btn");
+const educationBtn = document.getElementById("education--btn");
+const experienceBtn = document.getElementById("experience--btn");
+const skillsBtn = document.getElementById("skills--btn");
+const projectsBtn = document.getElementById("projects--btn");
+const contactBtn = document.getElementById("contact--btn");
 
 // Experience Tabs
-const katalonTab = document.getElementById("katalon--tab")
+const katalonTab = document.getElementById("katalon--tab");
+const ehTab = document.getElementById("eh--tab");
+const experienceTabs = [
+    {
+        element: katalonTab,
+        id: 'katalon'
+    },
+    {
+        element: ehTab,
+        id: 'eh'
+    },
+];
 
 // Global State
 let navigationOpen = false;
-let activeExperience = document.getElementById("katalon");
-let activeTab = katalonTab;
+let activeExperience = document.getElementById("eh");
+let activeTab = ehTab;
 
 // Sections
 const faders = document.querySelectorAll(".fade-in");
@@ -86,15 +97,18 @@ contactBtn.addEventListener("click", () => {
     closeNavigation();
 })
 
-katalonTab.addEventListener("click", () => {
-    // Remove the active state of the former tab
-    activeExperience.classList.remove("active");
-    activeTab.classList.remove("tab-active")
-    // Add the active state to the new tab
-    activeExperience = document.getElementById("katalon");
-    activeExperience.classList.add("active");
-    activeTab = katalonTab;
-    activeTab.classList.add("tab-active");
+// Switch experience tab
+experienceTabs.forEach(tab => {
+    tab.element.addEventListener("click", () => {
+       // Remove the active state of the former tab
+        activeExperience.classList.remove("active");
+        activeTab.classList.remove("tab-active");
+        // Add the active state to the new tab
+        activeExperience = document.getElementById(tab.id);
+        activeExperience.classList.add("active");
+        activeTab = tab.element;
+        activeTab.classList.add("tab-active"); 
+    })
 })
 
 // Sections Appear on Scrolling
