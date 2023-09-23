@@ -11,23 +11,28 @@ const projectsBtn = document.getElementById("projects--btn");
 const contactBtn = document.getElementById("contact--btn");
 
 // Experience Tabs
-const katalonTab = document.getElementById("katalon--tab");
+const naverTab = document.getElementById("naver--tab");
 const ehTab = document.getElementById("eh--tab");
+const katalonTab = document.getElementById("katalon--tab");
 const experienceTabs = [
     {
-        element: katalonTab,
-        id: 'katalon'
+        element: naverTab,
+        id: 'naver'
     },
     {
         element: ehTab,
         id: 'eh'
     },
+    {
+        element: katalonTab,
+        id: 'katalon'
+    },
 ];
 
 // Global State
 let navigationOpen = false;
-let activeExperience = document.getElementById("eh");
-let activeTab = ehTab;
+let activeExperience = document.getElementById("naver");
+let activeTab = naverTab;
 
 // Sections
 const faders = document.querySelectorAll(".fade-in");
