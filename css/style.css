@@ -341,12 +341,10 @@ h3 {
     height: 35rem;
     border-radius: .3rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    filter: grayscale(100%);
     transition: all .5s; }
     .about__avatar:hover {
       transform: scale(1.02) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      filter: none;
       z-index: 20; }
   .about__body {
     margin-right: 5rem;

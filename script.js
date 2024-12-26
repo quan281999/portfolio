@@ -11,10 +11,15 @@ const projectsBtn = document.getElementById("projects--btn");
 const contactBtn = document.getElementById("contact--btn");
 
 // Experience Tabs
+const grabTab = document.getElementById("grab--tab");
 const naverTab = document.getElementById("naver--tab");
 const ehTab = document.getElementById("eh--tab");
 const katalonTab = document.getElementById("katalon--tab");
 const experienceTabs = [
+    {
+        element: grabTab,
+        id: 'grab'
+    },
     {
         element: naverTab,
         id: 'naver'
@@ -31,8 +36,8 @@ const experienceTabs = [
 
 // Global State
 let navigationOpen = false;
-let activeExperience = document.getElementById("naver");
-let activeTab = naverTab;
+let activeExperience = document.getElementById("grab");
+let activeTab = grabTab;
 
 // Sections
 const faders = document.querySelectorAll(".fade-in");
